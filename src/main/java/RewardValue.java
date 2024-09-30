@@ -1,7 +1,7 @@
 public class RewardValue {
-    private double cash = -1.0;
-    private int miles = -1;
-    static double milesToCash = 0.0035;
+    private Double cash = null;
+    private Integer miles = null;
+    public static final double MILES_TO_CASH = 0.0035;
 
     public RewardValue(double cashValue) {
         if (cashValue >= 0)
@@ -18,14 +18,14 @@ public class RewardValue {
     }
 
     public double getCashValue() {
-        if (cash != -1.0)
+        if (cash != null)
             return cash;
-        return milesToCash * miles;
+        return MILES_TO_CASH * miles;
     }
 
     public int getMilesValue() {
-        if (miles != -1)
+        if (miles != null)
             return miles;
-        return (int) (1 / milesToCash * cash);
+        return (int) (1 / MILES_TO_CASH * cash);
     }
 }
